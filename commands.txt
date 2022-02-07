@@ -1,0 +1,17 @@
+Forward port 80 for Web UI
+kubectl port-forward --namespace default --address 0.0.0.0 svc/my-release-spark-master-svc 80:80
+
+Forward port 7077 for Spark Master
+kubectl port-forward --namespace default --address 0.0.0.0 svc/my-release-spark-master-svc 7077:7077
+
+
+View pod environment
+kubectl exec my-release-spark-worker-0 -- env
+
+
+Helm chart
+https://artifacthub.io/packages/helm/bitnami/spark
+
+Install with
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install my-release bitnami/spark

@@ -1,3 +1,8 @@
+Install with
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install my-release --set service.type=LoadBalancer --set service.loadBalancerIP=192.168.2.45 bitnami/spark
+
+
 Forward port 80 for Web UI
 kubectl port-forward --namespace default --address 0.0.0.0 svc/my-release-spark-master-svc 80:80
 
@@ -11,7 +16,3 @@ https://artifacthub.io/packages/helm/bitnami/spark
 
 Docker image for dev container
 https://hub.docker.com/r/bitnami/spark
-
-Install with
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install my-release --set service.type=LoadBalancer --set service.loadBalancerIP=192.168.2.50 bitnami/spark
